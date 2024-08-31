@@ -8,10 +8,11 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use("/", (req, res) => {
-    successResponse(res, { message: "Hellow World!" })
-})
 
 app.use('/api/events', eventRoutes);
+
+app.use("/", (req, res) => {
+    successResponse(res, { message: "Hellow World!" })
+});
 
 module.exports = app;
